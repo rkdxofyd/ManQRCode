@@ -67,10 +67,10 @@ int __stdcall GenerateQRCode(const wchar_t *content, GENERATED_QR_CODE *pQR_Data
 				pQR_Data->width = bmpData.Width;
 				pQR_Data->height = bmpData.Height;
 				pQR_Data->stride = bmpData.Stride;
-				pQR_Data->data = new unsigned char[pQR_Data->stride * pQR_Data->height * 3];
+				pQR_Data->data = new unsigned char[pQR_Data->stride * pQR_Data->height];
 				if (pQR_Data->data)
 				{
-					memcpy(pQR_Data->data, bmpData.Scan0, pQR_Data->stride * pQR_Data->height * 3);
+					memcpy(pQR_Data->data, bmpData.Scan0, pQR_Data->stride * pQR_Data->height);
 					rc = 0;
 				}
 				bmp->UnlockBits(&bmpData);
